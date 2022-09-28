@@ -7,7 +7,12 @@
     npm_config_prefix: "{{ npm_prefix }}"
 
 - name: install yarn
-  command: "npm install -g yarn@{{ yarn_version }}"
+  npm:
+    name: yarn
+    version: "{{ yarn_version }}"
+    global: true
+    state: present
   environment:
     NPM_CONFIG_PREFIX: "{{ npm_prefix }}"
     NODE_PATH: "{{ npm_prefix }}/lib/node_modules"
+    PATH: "{{ node_home }}/bin:{{ ansible_env.PATH }}"
