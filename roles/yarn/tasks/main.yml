@@ -15,4 +15,4 @@
   environment:
     NPM_CONFIG_PREFIX: "{{ npm_prefix }}"
     NODE_PATH: "{{ npm_prefix }}/lib/node_modules"
-    PATH: "{{ node_home }}/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ npm_prefix }}/bin:{{ ansible_env.PATH }}"
