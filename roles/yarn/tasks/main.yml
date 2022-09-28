@@ -7,11 +7,7 @@
     npm_config_prefix: "{{ npm_prefix }}"
 
 - name: install yarn
-  npm:
-    name: yarn
-    version: "{{ yarn_version }}"
-    global: true
-    state: present
+  command: "npm install -g yarn@{{ yarn_version }}"
   environment:
     NPM_CONFIG_PREFIX: "{{ npm_prefix }}"
     NODE_PATH: "{{ npm_prefix }}/lib/node_modules"

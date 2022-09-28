@@ -49,4 +49,4 @@ jobs:
             ${{ runner.os }}-
 
       - name: Test Playbooks
-        run: ansible-playbook tests/suite.yml --limit test --connection local -vvv
+        run: ansible-playbook tests/suite.yml --limit test --connection local
